@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    
+
+    <div id="app" class="container mt-3">
+        <div>
+            <input v-on:keyup.enter="searchBusiness()" class="form-control" placeholder="Search" v-model="businessName">
+
+            <div class="right mt-3">
+    
+                <button class="btn btn-secondary ml-2" :disabled="loading === true" v-on:click="next()">Next</button>
+                <button class="btn btn-secondary  ml-2" :disabled="loading === true" v-on:click="previous()">Previous</button>
+                <button class="btn btn-primary ml-2" :disabled="loading === true" v-on:click="searchBusiness()">Search Business</button>
+
+                <span> Page: {{ page }}</span>
+            </div>
+            <div id="business-table-container"></div>
+        </div>
+
+
+
+    </div>
+    
+
+
+
+</body>
+
+<script src='table.js'></script>
+<script src='main.js'></script>
+
+</html>
